@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant</title>
+    <!-- Google-fonts = "Lato" -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <!-- Fontawesome 6.5.2 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <!-- Owl-carousel 2.3.4 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+     <!-- Alpine JS 3.14.1 -->
+         <script src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/3.14.1/cdn.js"></script>
+    <!-- Custom -->
+    <link rel="stylesheet" href="assets/css/output.css">
+</head>
+
+<body>
+    <!-- banner and navbar -->
+    <section class="relative h-[100vh] bg-cover bg-center" style="background-image: url('https://images.yourstory.com/cs/2/a09f22505c6411ea9c48a10bad99c62f/Imagem0id-1707394707782.jpg?mode=crop&crop=faces&ar=16%3A9&format=auto&w=3840&q=75');">
+        <!-- Overlay -->
+        <div class="absolute inset-0 bg-black bg-opacity-60"></div>
+        <!-- Navigation -->
+        <nav class="relative z-10 container mx-auto py-5 lg:flex lg:justify-between lg:items-center" x-data="{ showNavbar: false }">
+            <div class="flex items-center justify-between">
+                <a href="#" class="flex items-center">
+                    <img src="assets/images/logo.png" alt="Logo" class="h-[50px] w-[100px]">
+                </a>
+                <button class="bg-[#F5F5DC] text-gray-900 text-lg px-3 block lg:hidden" @click="showNavbar = !showNavbar">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+            <ul :class="{ 'block': showNavbar, 'hidden': !showNavbar }" class="gap-10 lg:flex lg:space-x-4 lg:items-center text-white tracking-wider text-xs uppercase bg-stone-900 w-fit p-5 lg:p-0 lg:bg-transparent mt-4 lg:mt-0 space-y-5 lg:space-y-0">
+                <li><a href="#" class="hover:border-dashed border-b-2 hover:border-[#F5F5DC] py-2">Home</a></li>
+                <li><a href="#" class="hover:border-b hover:border-[#F5F5DC] py-2">Menu</a></li>
+                <li><a href="#" class="hover:border-b hover:border-[#F5F5DC] py-2">pages</a></li>
+                <li><a href="#" class="hover:border-b hover:border-[#F5F5DC] py-2">blog</a></li>
+                <li><a href="#" class="hover:border-b hover:border-[#F5F5DC] py-2">Reservation</a></li>
+                <li><a href="#" class="hover:border-b hover:border-[#F5F5DC] py-2">Team</a></li>
+                <li><a href="#" class="hover:border-b hover:border-[#F5F5DC] py-2">Gallery</a></li>
+                <li><a href="#" class="hover:border-b hover:border-[#F5F5DC] py-2">contact</a></li>
+                <li><a href="#" class="inline-block px-5 py-3 bg-[#F5F5DC] text-xs text-gray-900 font-bold transition-all duration-500 hover:bg-accent hover:text-[#F5F5DC]">Book a Table</a></li>
+            </ul>
+        </nav>
+
+        <!-- content -->
+         <div class="container mx-auto leading-[60px] absolute text-[#F5F5DC] uppercase text-center tracking-widest left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2">
+            <p class="font-medium">dining at</p>
+            <h1 class="font-semibold text-4xl lg:text-6xl mb-6">khana khazana</h1>
+            <p class="text-xs mb-6">
+                We Offer a highly seasonal and continuously evolving tasting menu experience.
+            </p>
+            <a href="#" class="font-medium text-sm pb-2 border-b border-[#F5F5DC]">
+                contact us
+            </a>
+         </div>
+    </section>
+
+    <!-- dining at khana khazana -->
+     <section class="my-10">
+        <div class="container mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-4 lg:gap-5">
+                <div class="col-span-1 hidden lg:block">
+                    <img src="assets/images/dining1.avif" alt="" class="lg:rounded-bl-3xl">
+                </div>
+                <div class="col-span-2 text-center lg:my-10">
+                    <h4 class="text-lg font-medium uppercase text-accent tracking-widest mb-3 relative  border-b-2 border-accent md:border-none w-fit mx-auto">
+                        welcome
+                        <span class="w-[10px] h-[2px] hidden md:block bg-accent absolute bottom-3 md:left-36"></span>
+                        <span class="w-[10px] h-[2px] hidden md:block bg-accent absolute bottom-3 md:right-36"></span>
+                    </h4>
+                    <h1 class="text-2xl lg:text-4xl font-medium italic mb-9">
+                        Dining at Khana Khazana
+                    </h1>
+                    <p class="leading-6 text-xs lg:text-sm mb-6">
+                        For a truly memorable dining experience, cuisine and atmosphere are paired as thoughtfully as food and wine. Ut enim ad minim veniam, quis nostrud exercitation ullamco. Quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Animi, id est laborum et dolorum fuga. Nam libero.
+                    </p>
+                    <a href="#" class="inline-block px-5 py-3 bg-[#F5F5DC] text-gray-900 font-bold transition-all duration-500 hover:bg-accent hover:text-[#F5F5DC]">Book a Table</a>
+                </div>
+                <div class="col-span-1 hidden lg:block">
+                    <img src="assets/images/dining-3.png" alt="" class="rounded-tr-3xl">
+                </div>
+            </div>
+        </div>
+     </section>
+
+     <!-- scroll visit section -->
+
+     <section class="relative h-[50vh] my-10" style="background-image: url('assets/images/buffet-315691_960_720.jpg'); background-size: cover; background-position: center; background-attachment: fixed;">
+        <div class="absolute inset-0 bg-black bg-opacity-60"></div>
+        <div class="absolute text-center text-[#F5F5DC] top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2">
+            <h4 class="text-lg font-medium uppercase tracking-widest mb-3 relative border-b-2 border-accent md:border-none">
+                come and see
+                <span class="w-[10px] h-[2px]  bg-[#F5F5DC] hidden md:block absolute lg:left-52 bottom-3 md:left-72"></span>
+                <span class="w-[10px] h-[2px] bg-[#F5F5DC] hidden md:block  absolute lg:right-52 bottom-3 md:right-72"></span>
+            </h4>
+            <h1 class="text-3xl md:text-5xl italic">
+                We create delicious experiences
+            </h1>
+        </div>
+     </section>
+
+  <!-- Scroll Menu Section -->
+    <section class="my-10">
+        <div class="container mx-auto">
+        <div class="text-center lg:my-10">
+            <h4 class="text-lg font-medium uppercase text-accent tracking-widest mb-3 relative border-b-2 border-accent md:border-none w-fit mx-auto">
+            Discover
+            <span class="w-[10px] h-[2px] hidden md:block bg-accent absolute bottom-3 md:left-36"></span>
+            <span class="w-[10px] h-[2px] hidden md:block bg-accent absolute bottom-3 md:right-36"></span>
+            </h4>
+            <h1 class="text-2xl lg:text-4xl font-medium italic mb-9">
+            Menu at Khana Khazana
+            </h1>
+            <p class="leading-6 text-xs lg:text-sm mb-6 lg:w-2/3 mx-auto">
+            Explore texture, color and of course the ultimate tastes with our menu of the season. All the ingredients are fresh and carefully selected by our chefs. Enjoy an extraordinary dining experience.
+            </p>
+            <div class="space-x-5 space-y-2 md:space-y-0 md:space-x-16 my-5">
+                <button class="tablink tracking-wider uppercase font-medium" onclick="openPage('starters', this, '#FFA07A')" id="defaultOpen">Starters</button>
+                <button class="tablink tracking-wider uppercase font-medium" onclick="openPage('main_course', this, '#FFA07A')">main course</button>
+                <button class="tablink tracking-wider uppercase font-medium" onclick="openPage('soups', this, '#FFA07A')">soups</button>
+                <button class="tablink tracking-wider uppercase font-medium" onclick="openPage('desserts', this, '#FFA07A')">desserts</button>
+            </div>
+        </div>
+        
+        <div id="starters" class="tabcontent relative px-2 md:px-10" style="background-image: url('https://media-cdn2.greatbritishchefs.com/media/fmba2cdp/img16269.whqc_660x440q80fpt541fpl503.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center;">
+            <div class="absolute inset-0 bg-black bg-opacity-60"></div>
+            <ul class="text-[#F5F5DC] relative">
+                <li class="flex items-center gap-5 py-5 border-dashed border-b-2 justify-between">
+                    <main>
+                        <h4 class="text-lg font-bold mb-1">KK Bharwaan Paneer</h4>
+                        <p class="text-sm italic">
+                            Cottage Cheese marinated with tandoori spices and stuffed cottage cheese.
+                        </p>
+                    </main>
+                    <h5>
+                        <i class="fas fa-indian-rupee"></i>
+                        750
+                    </h5>
+                </li>
+                <li class="flex items-center justify-between gap-5 py-5 border-dashed border-b-2">
+                    <main>
+                        <h4 class="text-lg font-bold mb-1">Kurkure Bhindi</h4>
+                        <p class="text-sm italic">A crispy Deep tried okra.</p>
+                    </main>
+                    <h5>
+                        <i class="fas fa-indian-rupee"></i>
+                        349
+                    </h5>
+                </li>
+                <li class="flex items-center justify-between gap-5 py-5 border-dashed border-b-2">
+                    <main>
+                        <h4 class="text-lg font-bold mb-1">Subz Cheese Kurkure</h4>
+                        <p class="text-sm italic">Chopped mixed vegetables stuffed with cheese and coated vermicelli.</p>
+                    </main>
+                    <h5>
+                        <i class="fas fa-indian-rupee"></i>
+                        450
+                    </h5>
+                </li>
+                <li class="flex items-center justify-between gap-5 py-5">
+                    <main>
+                        <h4 class="text-lg font-bold mb-1">Paneer Chatpata Kurkure</h4>
+                        <p class="text-sm italic">Cottage cheese marinated with chef's special spices and deep fried.</p>
+                    </main>
+                    <h5>
+                        <i class="fas fa-indian-rupee"></i>
+                        649
+                    </h5>
+                </li>
+            </ul>
+        </div>
+        
+        <div id="main_course" class="tabcontent relative px-2 md:px-10" style="background-image: url('assets/images/tab-2.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center;">
+            <div class="absolute inset-0 bg-black bg-opacity-60"></div>
+            <ul class="relative text-[#F5F5DC]">
+                <li class="flex items-center gap-5 py-5 border-dashed border-b-2 justify-between">
+                    <main>
+                        <h4 class="text-lg font-bold mb-1">Paneer Tikka Butter Masala</h4>
+                        <p class="text-sm italic">
+                            Grilled paneer cubes in a rich, creamy tomato-based gravy with spices.
+                        </p>
+                    </main>
+                    <h5>
+                        <i class="fas fa-indian-rupee"></i>
+                        250
+                    </h5>
+                </li>
+                <li class="flex items-center justify-between gap-5 py-5 border-dashed border-b-2">
+                    <main>
+                        <h4 class="text-lg font-bold mb-1">Rogan Josh</h4>
+                        <p class="text-sm italic">A flavorful lamb curry with a rich, red sauce made from yogurt and spices.</p>
+                    </main>
+                    <h5>
+                        <i class="fas fa-indian-rupee"></i>
+                        350
+                    </h5>
+                </li>
+                <li class="flex items-center justify-between gap-5 py-5 border-dashed border-b-2">
+                    <main>
+                        <h4 class="text-lg font-bold mb-1">Aloo Gobi</h4>
+                        <p class="text-sm italic">A dry curry made with potatoes and cauliflower, flavored with turmeric and spices.</p>
+                    </main>
+                    <h5>
+                        <i class="fas fa-indian-rupee"></i>
+                        180
+                    </h5>
+                </li>
+                <li class="flex items-center justify-between gap-5 py-5">
+                    <main>
+                        <h4 class="text-lg font-bold mb-1">Chole Bhature</h4>
+                        <p class="text-sm italic">Spicy chickpea curry served with deep-fried bread.</p>
+                    </main>
+                    <h5>
+                        <i class="fas fa-indian-rupee"></i>
+                        200
+                    </h5>
+                </li>
+            </ul>
+        </div>
+        
+        <div id="soups" class="tabcontent relative px-2 md:px-10" style="background-image: url('assets/images/4.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center;">
+            <div class="absolute inset-0 bg-black bg-opacity-60"></div>
+            <ul class="text-[#F5F5DC] relative">
+                <li class="flex items-center gap-5 py-5 border-dashed border-b-2 justify-between">
+                    <main>
+                        <h4 class="text-lg font-bold mb-1">Lentil Soup</h4>
+                        <p class="text-sm italic">
+                            Classic Indian Soup made with spices and herbs
+                        </p>
+                    </main>
+                    <h5>
+                        <i class="fas fa-indian-rupee"></i>
+                        400
+                    </h5>
+                </li>
+                <li class="flex items-center justify-between gap-5 py-5 border-dashed border-b-2">
+                    <main>
+                        <h4 class="text-lg font-bold mb-1">Tomato Basil Shorba</h4>
+                        <p class="text-sm italic">Tomato Soup with Basil Flavour</p>
+                    </main>
+                    <h5>
+                        <i class="fas fa-indian-rupee"></i>
+                        350
+                    </h5>
+                </li>
+                <li class="flex items-center justify-between gap-5 py-5 border-dashed border-b-2">
+                    <main>
+                        <h4 class="text-lg font-bold mb-1">Murg Kalimiri Shorba</h4>
+                        <p class="text-sm italic">Soup made of chicken and crushed peppers</p>
+                    </main>
+                    <h5>
+                        <i class="fas fa-indian-rupee"></i>
+                        450
+                    </h5>
+                </li>
+                <li class="flex items-center justify-between gap-5 py-5">
+                    <main>
+                        <h4 class="text-lg font-bold mb-1">Mutton Yakhini Shorba</h4>
+                        <p class="text-sm italic">North indian mutton soup flavored with a blend of authentic indian herbs and spices</p>
+                    </main>
+                    <h5>
+                        <i class="fas fa-indian-rupee"></i>
+                        499
+                    </h5>
+                </li>
+            </ul>
+        </div>
+        
+        <div id="desserts" class="tabcontent relative px-2 md:px-10" style="background-image: url('assets/images/3.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center;">
+            <div class="absolute inset-0 bg-black bg-opacity-60"></div>
+            <ul class="relative text-[#F5F5DC]">
+                <li class="flex items-center gap-5 py-5 border-dashed border-b-2 justify-between">
+                    <main>
+                        <h4 class="text-lg font-bold mb-1">Triple chocolate brownie</h4>
+                        <p class="text-sm italic">
+                            Baked fudge cake with nibs of dark, white & milk chocolate
+                        </p>
+                    </main>
+                    <h5>
+                        <i class="fas fa-indian-rupee"></i>
+                        249
+                    </h5>
+                </li>
+                <li class="flex items-center justify-between gap-5 py-5 border-dashed border-b-2">
+                    <main>
+                        <h4 class="text-lg font-bold mb-1">Shaam Savera</h4>
+                        <p class="text-sm italic">Gulab Jamun with a scoop of vanilla ice cream</p>
+                    </main>
+                    <h5>
+                        <i class="fas fa-indian-rupee"></i>
+                        249
+                    </h5>
+                </li>
+                <li class="flex items-center justify-between gap-5 py-5 border-dashed border-b-2">
+                    <main>
+                        <h4 class="text-lg font-bold mb-1">Rasmalai</h4>
+                        <p class="text-sm italic">Cottage Cheese dumpling cooked in sugar syrup, served in saffron flavored milk</p>
+                    </main>
+                    <h5>
+                        <i class="fas fa-indian-rupee"></i>
+                        249
+                    </h5>
+                </li>
+                <li class="flex items-center justify-between gap-5 py-5">
+                    <main>
+                        <h4 class="text-lg font-bold mb-1">Matka Kulfi</h4>
+                        <p class="text-sm italic">Made Of boiled condensed milk</p>
+                    </main>
+                    <h5>
+                        <i class="fas fa-indian-rupee"></i>
+                        249
+                    </h5>
+                </li>
+            </ul>
+        </div>
+        <div class="text-center">
+            <a href="#" class="inline-block px-7 py-5 mt-10 bg-[#F5F5DC] text-gray-900 font-bold transition-all duration-500 hover:bg-accent hover:text-[#F5F5DC]">Book a Table</a>
+        </div>
+        </div>
+    </section>
+  
+  <!-- booking -->
+    <section class="relative h-[50vh] my-10" style="background-image: url('assets/images/pexels-pixabay-260922.jpg'); background-size: cover; background-position: center; background-attachment: fixed;">
+        <div class="absolute inset-0 bg-black bg-opacity-60"></div>
+        <div class="absolute text-center text-[#F5F5DC] top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2">
+            <h4 class="text-lg font-medium uppercase tracking-widest mb-3 relative border-b-2 border-accent md:border-none">
+                come and see
+                <span class="w-[10px] h-[2px]  bg-[#F5F5DC] hidden md:block absolute lg:left-52 bottom-3 md:left-72"></span>
+                <span class="w-[10px] h-[2px] bg-[#F5F5DC] hidden md:block  absolute lg:right-52 bottom-3 md:right-72"></span>
+            </h4>
+            <h1 class="text-3xl md:text-5xl italic">
+                We create delicious experiences
+            </h1>
+        </div>
+    </section>
+
+    <!-- behind the scenes -->
+
+    <section class="my-10">
+        <div class="container mx-auto text-center">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                <div>
+                    <h4 class="text-lg font-medium uppercase text-accent tracking-widest mb-3 relative  border-b-2 border-accent md:border-none w-fit mx-auto">
+                        Behind the Scenes
+                        <span class="w-[10px] h-[2px] hidden md:block bg-accent absolute bottom-3 md:left-56"></span>
+                        <span class="w-[10px] h-[2px] hidden md:block bg-accent absolute bottom-3 md:right-56"></span>
+                    </h4>
+                    <h1 class="text-2xl lg:text-4xl font-medium italic mb-5">
+                        The Team
+                    </h1>
+                    <p class="leading-6 text-xs lg:text-sm mb-4">
+                        For a truly memorable dining experience, cuisine and atmosphere are paired as thoughtfully as food and wine. Ut enim ad minim veniam, quis nostrud exercitation ullamco. Quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Animi, id est laborum et dolorum fuga. Nam libero.
+                    </p>
+                    <a href="#" class="inline-block px-5 py-4 text-sm mt-5 bg-[#F5F5DC] text-gray-900 font-bold transition-all duration-500 hover:bg-accent hover:text-[#F5F5DC]">Find More</a>
+                </div>
+                <div>
+                    <img src="assets/images/behind-the-scenes.png" alt="" class="">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- testimonials -->
+     <section class="relative h-[120vh] md:h-[100vh] my-10" style="background-image: url('assets/images/review.jpg');background-repeat: no-repeat; background-position: center;background-attachment: fixed;background-size: cover;">
+        <div class="absolute inset-0 bg-black bg-opacity-60"></div>
+        <div class="container mx-auto text-center text-white relative tracking-wide py-10">
+            <h4 class="text-lg font-medium uppercase text-accent tracking-widest mb-3 relative  border-b-2 border-accent md:border-none w-fit mx-auto">
+                testimonials
+                <span class="w-[10px] h-[2px] hidden md:block bg-accent absolute bottom-3 md:left-40"></span>
+                <span class="w-[10px] h-[2px] hidden md:block bg-accent absolute bottom-3 md:right-40"></span>
+            </h4>
+            <h1 class="text-2xl lg:text-5xl font-medium mb-5">
+                What Clients Say
+            </h1>
+            <div class="owl-carousel testimonial-carousel md:mt-16">
+                <div>
+                    <p class="text-lg md:text-2xl font-light md:leading-10 italic">
+                        <sup><i class="fas fa-quote-left me-1"></i></sup>
+                        Indian restaurant ka khana bohot flavorsome aur authentic hota hai. Curries mein spices ka kamaal hota hai, jo har dish ko unique banata hai. Tandoori dishes jaise chicken tikka aur paneer tikka bhi bohot tender aur flavorful hote hain. Overall, flavors kaafi balanced aur authentic hote hain, jo asli Indian taste ka mazaa dete hain.                        <sup><i class="fas fa-quote-right ms-1"></i></sup>
+                    </p>
+                    <p class="text-md md:text-xl font-medium mt-2 md:mt-10">
+                        - Shivani Desai
+                    </p>
+                </div>
+                <div>
+                    <p class="text-lg md:text-2xl font-light md:leading-10 italic">
+                        <sup><i class="fas fa-quote-left me-1"></i></sup>
+                        Menu mein bohot variety milti hai, aur har kisi ke taste ke hisaab se kuch na kuch zaroor hota hai. Vegetarian aur non-vegetarian dono options available hote hain, aur alag-alag regional cuisines bhi milte hain. Matlab, ek jagah par hi aap South Indian, North Indian, aur even Indo-Chinese dishes try kar sakte ho.                    
+                        <sup><i class="fas fa-quote-right ms-1"></i></sup>
+                    </p>
+                    <p class="text-md md:text-xl font-medium mt-2 md:mt-10">
+                        - Varun Gupta
+                    </p>
+                </div>
+                <div>
+                    <p class="text-lg md:text-2xl font-light md:leading-10 italic">
+                        <sup><i class="fas fa-quote-left me-1"></i></sup>
+                        Khana thoda zyada spicy tha mere liye, especially curries. Lekin yeh accha hai ki restaurant mein spice level customize karne ka option milta hai. Aap apne taste ke hisaab se mild ya medium kar sakte ho. Yeh flexibility acchi hai, kyunki har koi different level ka spice handle kar sakta hai.                   
+                         <sup><i class="fas fa-quote-right ms-1"></i></sup>
+                    </p>
+                    <p class="text-md md:text-xl font-medium mt-2 md:mt-10">
+                        - Raj Shamani
+                    </p>
+                </div>
+                <div>
+                    <p class="text-lg md:text-2xl font-light md:leading-10 italic">
+                        <sup><i class="fas fa-quote-left me-1"></i></sup>
+                        Dishes jaise butter chicken aur paneer makhani bohot rich aur creamy hote hain. Yeh dishes khaane mein thoda heavy lagte hain, lekin unka taste itna accha hota hai ki sab kuch maaf hai! Creamy texture aur balanced spices in dishes ko special banate hain. Par haan, agar aapko light food pasand hai, toh yeh dishes avoid kar sakte hain.      
+                       <sup><i class="fas fa-quote-right ms-1"></i></sup>
+                    </p>
+                    <p class="text-md md:text-xl font-medium mt-2 md:mt-10">
+                        - Shekhar Singh
+                    </p>
+                </div>
+            </div>
+        </div>
+     </section>
+
+     <!-- reservation -->
+     <section class="my-10">
+        <div class="container mx-auto">
+            <h4 class="text-lg font-medium uppercase text-accent tracking-widest mb-3 relative  border-b-2 border-accent md:border-none w-fit mx-auto">
+                contact
+                <span class="w-[10px] h-[2px] hidden md:block bg-accent absolute bottom-3 md:left-28"></span>
+                <span class="w-[10px] h-[2px] hidden md:block bg-accent absolute bottom-3 md:right-28"></span>
+            </h4>
+            <h1 class="text-2xl lg:text-5xl font-medium mb-5 italic text-center">
+                Make a Reservation
+            </h1>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10 my-10 px-10">
+                <div>
+                    <h4 class="uppercase font-semibold mb-6">
+                        Private Dining
+                    </h4>
+                    <p class="text-sm leading-6">
+                        The Main Dining Room can accommodate up to 18 guests and requires either a half night or full night buyout. Reservations are available online 6 weeks before the date of the reservation.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="uppercase font-semibold mb-6">
+                        Private Events
+                    </h4>
+                    <p class="text-sm leading-6">
+                        Looking for an ideal venue? Look no further. Corporate dinners, special occasions, let us handle your needs. Reservations are available online 6 weeks before the date of the reservation.      
+                    </p>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-12 px-10 gap-10 my-10">
+                <div class="col-span-4">
+                    <input type="text" placeholder="Name" class="outline-none px-5 py-3 bg-gray-100 w-full">
+                </div> 
+                <div class="col-span-4">
+                    <input type="email" placeholder="Email" class="outline-none px-5 py-3 bg-gray-100 w-full">
+                </div> 
+                <div class="col-span-4">
+                    <input type="number" placeholder="Phone" class="outline-none px-5 py-3 bg-gray-100 w-full">
+                </div> 
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-12 px-10">
+                <div class="col-span-12">
+                    <textarea placeholder="Your Message" class="outline-none px-5 py-3 md:py-6 bg-gray-100 w-full"></textarea>
+                </div>
+            </div>
+
+            <div class="text-center">
+                <a href="#" class="inline-block px-7 py-5 text-sm mt-5 bg-[#F5F5DC] text-gray-900 font-bold transition-all duration-500 hover:bg-accent hover:text-[#F5F5DC]">Book Now</a>
+            </div>
+        </div>
+     </section>
+
+  <!-- footer -->
+   <footer class="bg-stone-900 pt-10">
+    <div class="container mx-auto">
+        <div class="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 text-gray-500 gap-10">
+            <ul>
+                <li>
+                    <a href="#">
+                        <img src="assets/images/logo.png" alt="" class="w-[100px] h-[50px]">
+                    </a>
+                </li>
+                <li class="leading-6 mt-2">
+                    For a truly memorable dining experience reserve in advance a table as soon as you can. Come and taste our remarkable food and wine.
+                </li>
+            </ul>
+            <ul class="text-sm leading-8">
+                <li>
+                     <h3 class="text-lg uppercase text-white font-medium mb-5">address</h3>
+                </li>
+                <li>
+                    TA 61, Okhla Main Road, Tughlakabad Extension, Delhi - 110019 (Opposite Tara Appartment)
+                </li>
+            </ul>
+            <ul class="text-sm leading-8">
+                <li>
+                     <h3 class="text-lg uppercase text-white font-medium mb-5">hours</h3>
+                </li>
+                <li>
+                    Monday - Sunday
+                </li>
+                <li>
+                    Lunch: 12PM - 2PM
+                </li>
+                <li>
+                    Dinner: 6PM - 10PM 
+                </li>
+                <li>
+                    Happy Hours: 4PM - 6PM
+                </li>
+            </ul>
+            <ul class="text-sm leading-8">
+                <li>
+                     <h3 class="text-lg uppercase text-white font-medium mb-5">more info</h3>
+                </li>
+                <li>
+                   <a href="#" class="transition-all duration-500 hover:text-accent">
+                    Careers
+                   </a>
+                </li>
+                <li>
+                    <a href="#" class="transition-all duration-500 hover:text-accent">Get in Touch</a>
+                </li>
+                <li>
+                    <a href="#" class="transition-all duration-500 hover:text-accent">Privacy Policy</a>
+                </li>
+            </ul>
+        </div>
+        <div class="md:flex md:justify-between text-gray-500 py-5">
+            <p>
+                Copyright © 2024, Khana Khazana . Designed by <a href="https://spreadmybusiness.in/" class="transition-all duration-500 hover:text-accent">SpreadMyBusiness</a>
+            </p>
+            <ul class="flex gap-5">
+                <li>
+                    <a href="#" class="transition-all duration-500 hover:text-accent">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="transition-all duration-500 hover:text-accent">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="transition-all duration-500 hover:text-accent">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="transition-all duration-500 hover:text-accent">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+   </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>
